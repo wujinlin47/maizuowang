@@ -18,7 +18,10 @@ import Store from './pages/Store.js'
 //引入我的
 import My from './pages/My.js'
 //引入卖座卡
-import Card from './pages/Card.js'           
+import Card from './pages/Card.js'  
+
+//引入app.css样式
+import './css/app.css' 
 
           
 export default class App extends Component{       
@@ -26,10 +29,10 @@ export default class App extends Component{
 	render () {
 		 return (
 		 	<BrowserRouter> 
-		 		<div id="router">
-		 			<AppHeader /> 
-		 			<SilderBar />
-		 			<Route path="/" exact component={Home}/>
+		 		<div>          
+		 			<AppHeader />    
+		 			
+		 			<SilderBar />    
 		 		</div>   
 		 	</BrowserRouter>                   	
 		 )       
