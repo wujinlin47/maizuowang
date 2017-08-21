@@ -1,21 +1,22 @@
 import React, {Component} from 'react'  
+ 
 
-
-export default class AppHeader extends Component{
+export default class AppHeader extends Component{ 
 	
 	
 	render () {
-		return (
+		return (  
 				
-			<div class="header-bar">  
-				<div class="top-left">
-					<span class="iconfont icon-menu"></span>
-					<span>卖座电影</span>
+			<div class="header-bar one-border-bottom" onClick={this.headerBarControlHide.bind(this)}>                     
+				<div class="top-left">      
+					<span class="iconfont icon-menu" onClick={this.sliderBarShow.bind(this)}></span>     
+					
+					<span>卖座电影</span>     
 				</div>
-				<div class="top-right">
+				<div class="top-right"> 
 					<p>
 						<span>深圳</span>
-						<span class="iconfont icon-arrow-down"></span> 
+						<span class="iconfont icon-arrow-down"></span>  
 					</p>
 					<em class="iconfont icon-person"></em>         
 				</div> 			
@@ -23,4 +24,15 @@ export default class AppHeader extends Component{
 				
 		)
 	}
+	
+	sliderBarShow () {
+		//调用App.js中AppHeader组件中的menuHandle方法   
+		this.props.menuHandle();                   
+	}
+	
+	headerBarControlHide () {
+		//调用App.js中AppHeader组件中的menuHandle方法                 
+		this.props.menuHandle(); 
+	}
+	
 }

@@ -1,6 +1,6 @@
 html,body,#app{ 
-	width: 100%;
-	height: 100%;
+	width: 100%; 
+	height: 100%; 
 }
 #app .header-bar{ 
 	width: 100%;
@@ -53,12 +53,34 @@ html,body,#app{
 	text-align: center; 
 	line-height: 50px;
 	font-size: 8px;
-	transform: scale(0.9); 
+	transform: scale(0.9);  
 }
-.header-bar .top-right em{
+.header-bar .top-right em{ 
 	display: block;
 	width: 50px;
 	height: 50px;
 	text-align: center;
 	line-height: 50px; 
 }
+/*侧边栏动画*/   
+.slider-bar{                                
+	width: 250px;                   
+	position: absolute;                
+	left: 0;
+	top: 51px;          
+	bottom: 0;    
+	background: #000;
+	z-index: 10;             
+	transition: 0.4s;                      
+} 
+/*遮罩层动画*/ 
+.cover{
+	position: absolute;
+	width: 100%;
+	top: 51px;
+	bottom: 0;
+	left: 0;
+	background: #000; 
+	transition: 0.4s;
+}
+  
