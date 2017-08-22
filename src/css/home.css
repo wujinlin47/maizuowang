@@ -1,0 +1,98 @@
+/*轮播图样式*/
+#app .homePage{ 
+	background: #DDD;       
+}
+.homePage .home-banner{
+	height: 200px;
+	width: 100%;   
+}
+.homePage .home-banner img{
+	display: block;
+	width: 100%;
+	height: 100%; 
+}
+/*热映电影样式*/
+.homePage .hot-movies{
+	width: 100%; 
+}
+.homePage .hot-movies .filmIfo,
+.homePage .coming-movies .filmIfo{ 
+	width: 335px;
+	height: 250px;  
+	margin: 20px 20px 0 20px;      
+}
+.homePage .hot-movies img,
+.homePage .coming-movies img{
+	display: block;
+	width: 100%;
+	height: 200px;  
+}
+.homePage .hot-movies .textIfo,
+.homePage .coming-movies .textIfo{
+	width: 100%; 
+	height: 50px;
+	padding: 5px; 
+	box-sizing: border-box; 
+	background: #fff;
+	color: #666666; 
+}
+.homePage .hot-movies .textIfo p:nth-child(1),
+.homePage .coming-movies .textIfo p:nth-child(1){
+	float: left; 
+}
+.homePage .coming-movies .textIfo p:nth-child(1){
+	margin-top: 15px;
+}
+.homePage .hot-movies .textIfo p:nth-child(2),
+.homePage .coming-movies .textIfo p:nth-child(2){ 
+	font-size: 30px; 
+	color: orange;
+	width: 50px;
+	height: 40px; 
+	text-align: center;
+	line-height: 40px; 
+	float: right; 
+}
+.homePage .hotMore, 
+.homePage .comingMore{         
+	width: 200px;
+	height: 30px;
+	border: 2px solid #666;   
+	border-radius: 50px;  
+	font-size: 14px;
+	color: #333;  
+	text-align: center;
+	line-height: 30px;
+	margin:20px auto;  
+}
+.homePage .line-title{
+	width: 100%;
+	height: 20px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.homePage .line-title .line{
+	width: 100%;
+	height: 1px;
+	background-color: #666;   
+	position: absolute;
+	left: 0;
+	top: 9px;  
+}
+.homePage .line-title .font{
+	height: 100%;  
+	width: 64px;       
+	line-height: 20px; 
+	background: #666666;  
+	font-size: 16px;
+	color: #333;
+	padding:0 5px; 
+	position: absolute; 
+	left: 146px; 
+	border-radius: 5px;                       
+}
+.homePage .empty{
+	width: 100%;
+	height: 30px;
+}

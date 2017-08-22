@@ -7,11 +7,11 @@ export default class AppHeader extends Component{
 	render () {
 		return (  
 				
-			<div class="header-bar one-border-bottom" onClick={this.headerBarControlHide.bind(this)}>                     
+			<div class="header-bar one-border-bottom" onClick={this.headerBarControlHide.bind(this)}>                      
 				<div class="top-left">      
 					<span class="iconfont icon-menu" onClick={this.sliderBarShow.bind(this)}></span>     
 					
-					<span>卖座电影</span>     
+					<span>{this.props.title}</span>              
 				</div>
 				<div class="top-right"> 
 					<p>
