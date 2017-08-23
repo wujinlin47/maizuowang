@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
 //引入home样式
-import '../css/home.css'                         
+import '../../css/home.css'                               
 
 //引入homeService中暴露的请求函数
-import homeService from '../serveices/homeService.js' 
+import homeService from '../../serveices/homeService.js'       
 
 //定义滚动实例
 let homeScroll = null;
@@ -12,11 +12,10 @@ let homeScroll = null;
 let homeSwiper = null; 
 
 export default class Home extends Component{    
-	 constructor ({history}) {
+	 constructor () {  
 	 	super();
 //	 	console.log(history);      
-	 	this.state ={
-	 		history,       
+	 	this.state ={     
 	 		bannerData:[],         
 	 		hotMovies:[],
 	 		comingMovies:[]
@@ -28,7 +27,7 @@ export default class Home extends Component{
 			<div ref="homePage" class="page main homePage">  
 				<div class="wrap">
 					<div ref="homeBanner" class="swiper-container home-banner">                           
-					    <ul class="swiper-wrapper">   
+					    <ul class="swiper-wrapper">    
 					        {
 					        	this.state.bannerData.map( (item,index) => { 
 					        		return (
@@ -40,13 +39,13 @@ export default class Home extends Component{
 					        }
 					    </ul>
 					</div>
-					
+					{/*hotMovies为数组，当为空时map遍历不会报错*/}       
 					<div class="hot-movies"> 
 						{
-							this.state.hotMovies.map( (item,index) => {
-								return (
-									<div key={index} class="filmIfo" 
-													 onClick={this.tohomeDetailPage.bind(this,item.id)}>
+							this.state.hotMovies.map( (item,index) => {  
+								return (      
+									<div key={index} class="filmIfo"  
+													 onClick={this.tohomeDetailPage.bind(this,item.id,item.name)}>
 										<img src={item.img}/>
 										<div class="textIfo">
 											<p>
@@ -77,7 +76,7 @@ export default class Home extends Component{
 							this.state.comingMovies.map( (item,index) => {
 								return (
 									<div key={index} class="filmIfo"
-													 onClick={this.tohomeDetailPage.bind(this,item.id)}> 
+													 onClick={this.tohomeDetailPage.bind(this,item.id,item.name)}> 
 										<img src={item.img}/>
 										<div class="textIfo">
 											<p>
@@ -106,6 +105,10 @@ export default class Home extends Component{
 	 
 	//在将要挂载之前请求数据
 	componentWillMount () {
+		
+	}
+	
+	componentDidMount () {
 		//首页轮播图
 		homeService.getHomeBanner() 
 		.then( (data) => {
@@ -123,33 +126,34 @@ export default class Home extends Component{
 //			console.log(data);     
 			
 		})
-		
+		  
 		//首页热映电影
 		homeService.getHomeHotMovie()
 		.then( (data) => {
-//			console.log(data)
+//			console.log(data)               
 			this.setState({hotMovies:data}) 
 		})
-		
-		
+//		{
+//			list: []
+//		}
+//		{
+//			code: -100,
+//			msg: ''
+//		}
+//		[]
 		//首页即将上映
 		homeService.getHomeComingMovie()
 		.then( (data) => {
 //			console.log(data)      
 			this.setState({comingMovies:data})  
 		})
-		
-		
-	}
-	
-	componentDidMount () {
 		//挂载之后创建IScroll实例 
 		homeScroll = new IScroll(this.refs.homePage,{              
 			probetype:3
 		})
 		//监听滚动发生即刷新滚动实例
 		homeScroll.on('scrollStart',() => {          
-			homeScroll.refresh();  
+			homeScroll.refresh();   
 		})
 		
 		//挂载之后创建swiper实例
@@ -160,8 +164,10 @@ export default class Home extends Component{
 	}
 	
 	//通过点击事件跳转首页详情页
-	tohomeDetailPage (id) {
-		this.state.history.push('/home-detail',id)                       
+	//通过点击事件改变头部标题 
+	tohomeDetailPage (id,name) {
+		this.props.history.push('/home-detail',id) 
+		this.props.changeTitle(name)     
 	}
 	
 }

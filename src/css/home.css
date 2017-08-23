@@ -96,3 +96,54 @@
 	width: 100%;
 	height: 30px;
 }
+
+
+/*首页详情页样式*/
+#app .homeDetailPage{
+	background: #DDDDDD;  
+}
+.homeDetailPage img{
+	display: block;
+	width: 100%;
+	height: 200px; 
+}
+.homeDetailPage .title{
+	width: 80px;  
+	height: 20px; 
+	margin-top: 20px; 
+	font-size: 0;  
+}
+.homeDetailPage .title span:nth-child(1){ 
+	display: block;
+	width: 10px; 
+	height: 20px;
+	background: orange;
+	float: left; 
+}
+.homeDetailPage .title span:nth-child(2){
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	color: #333;
+	float: right; 
+}
+.homeDetailPage p{ 
+	height: 14px;
+	padding: 10px 12px;
+	line-height:14px;   
+	font-size:10px;   		
+}
+.homeDetailPage .buyTicket{
+	position: absolute;
+	left: 87px;
+	bottom: 30px; 
+	width: 200px;
+	height: 30px;
+	border-radius: 50px; 
+	background: orangered;
+	font-size: 16px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+}

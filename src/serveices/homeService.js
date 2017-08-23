@@ -34,7 +34,7 @@ function getHomeHotMovie () {
 				hotObj.grade = item.grade;//评分
 				hotObj.id = item.id;//id 
 				
-				return hotObj;   
+				return hotObj;  
 			})
 			resolve(hotArr)        
 		})
@@ -83,9 +83,9 @@ function getHomeDetailData (id) {
 			detailObj.language = response.data.data.film.language;//语言
 			detailObj.name = response.data.data.film.name;//影片名
 			detailObj.synopsis = response.data.data.film.synopsis;//影片简介
+			detailObj.category = response.data.data.film.category;//影片类型  
 			detailObj.id = response.data.data.film.id;//影片简介
 				
-	
 			resolve(detailObj)                          
 		})
 		.catch( (error) => {

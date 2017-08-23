@@ -11,7 +11,12 @@ const homeComingMoving2 = '&page=1&count=3'
 
 //首页详情页
 const homeDetialData1 = '/v4/api/film/'
-const homeDetialData2 = '?__t='  
+const homeDetialData2 = '?__t='
+
+
+
+//影片页面正在热映url
+const filmHotMovies = '/v4/api/film/now-playing?page=1&count=7'
 
 //将数据请求url暴露给services
 export default {      

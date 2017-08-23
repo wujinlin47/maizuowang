@@ -1,0 +1,25 @@
+.filmPage{      
+	padding: 0 10px;   
+	box-sizing: border-box;       
+	background: #DDDDDD;          
+}
+.filmPage .tab{    
+	width: 100%;
+	height: 30px;
+	display: flex;  
+}
+.filmPage .tab:after{
+	border-color: orangered; 
+}
+.filmPage .tab span{
+	flex: 1;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px; 
+	box-sizing: border-box;   
+}
+.filmPage .tab span.active{
+	color: orangered;
+	border-bottom: 2px solid orangered;   
+}

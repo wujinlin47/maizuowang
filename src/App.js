@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
            
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom' 
 //引入头部组件 
 import AppHeader from './views/common/AppHeader.js'
 //引入侧边栏组件
@@ -8,19 +8,19 @@ import SilderBar from './views/common/SilderBar.js'
 
        
 //引入首页 
-import Home from './pages/Home.js'
+import Home from './pages/home/Home.js'
 //引入首页详情页
-import HomeDetial from './pages/HomeDetial.js'  
+import HomeDetial from './pages/home/HomeDetial.js'  
 //引入影片            
-import Film from './pages/Film.js'
+import Film from './pages/film/Film.js' 
 //引入影院
-import Cinema from './pages/Cinema.js'  
+import Cinema from './pages/cinema/Cinema.js'  
 //引入商城
-import Store from './pages/Store.js'
+import Store from './pages/store/Store.js'
 //引入我的
-import My from './pages/My.js'
-//引入卖座卡
-import Card from './pages/Card.js'  
+import My from './pages/my/My.js'
+//引入卖座卡 
+import Card from './pages/card/Card.js'   
 
 //引入app.css样式
 import './css/app.css' 
@@ -51,8 +51,11 @@ export default class App extends Component{
 		 								  history={history} 
 		 								  pathName={location.pathname}/>             
 		 			}}/> 
-		 			<Route path='/' exact component={Home} />
-		 			<Route path='/home-detail' component={HomeDetial} />         
+		 			<Route path='/' exact render={({history}) => { 
+		 				return <Home history={history}
+		 							 changeTitle={this.changeTitle.bind(this)}/>  
+		 			}} />
+		 			<Route path='/home-detail' component={HomeDetial}/>                        
 		 			<Route path='/film' component={Film} />  
 		 			<Route path='/cinema' component={Cinema} />    
 		 			<Route path='/shop' component={Store} />      
@@ -72,7 +75,12 @@ export default class App extends Component{
 			this.setState({headerTitle})
 		} 
 		  
-	}           
+	} 
+	
+	//点击影片列表之后改变头部标题
+	changeTitle (newName) {
+		this.setState({headerTitle:newName})  
+	}
 	
 }
 

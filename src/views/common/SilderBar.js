@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'      
  
 //引入侧边栏数据信息       
-import menu from '../../serveices/sliderBarIfo.js'      
+import menu from '../../serveices/sliderBarIfo.js'       
 
 export default class SliderBar extends Component{ 
 	
