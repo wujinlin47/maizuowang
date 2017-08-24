@@ -1,9 +1,6 @@
 export default {
-	filmIfo : [ 
-		{title:'正在上映'},
-		{title:'即将上映'}  
+	filmIfo:[
+		{tabName:'正在热映'}, 
+		{tabName:'即将上映'}
 	]
-		
-	
-	
 }

@@ -53,10 +53,10 @@ export default class App extends Component{
 		 			}}/> 
 		 			<Route path='/' exact render={({history}) => { 
 		 				return <Home history={history}
-		 							 changeTitle={this.changeTitle.bind(this)}/>  
+		 							 changeTitle={this.changeTitle.bind(this)}/> 
 		 			}} />
 		 			<Route path='/home-detail' component={HomeDetial}/>                        
-		 			<Route path='/film' component={Film} />  
+		 			<Route path='/film' component={Film} />     
 		 			<Route path='/cinema' component={Cinema} />    
 		 			<Route path='/shop' component={Store} />      
 		 			<Route path='/my' component={My} />    

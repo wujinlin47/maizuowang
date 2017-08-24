@@ -29,6 +29,21 @@ input{outline:none;}
 	transform: scaleY(.5);              
 }
 
+.dashed-border-bottom{
+	position: relative;
+}
+.dashed-border-bottom:after{
+	content:'';                              
+	display: block;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px dashed #666;     
+	position: absolute;
+	left: 0;
+	bottom:-1px; 
+	transform: scaleY(.5);              
+}
+
 /*动画时间设置*/
 .animated {
   -webkit-animation-duration: 0.3s;

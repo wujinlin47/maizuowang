@@ -2,7 +2,7 @@
 	padding: 0 10px;   
 	box-sizing: border-box;       
 	background: #DDDDDD;          
-}
+} 
 .filmPage .tab{    
 	width: 100%;
 	height: 30px;
@@ -22,4 +22,79 @@
 .filmPage .tab span.active{
 	color: orangered;
 	border-bottom: 2px solid orangered;   
+}
+
+
+/*两个组件的样式*/
+.filmPage .listPage{
+	width: 100%;
+	height: auto;   
+}
+.filmPage .listPage .hotList,
+.filmPage .listPage .comingList{
+	height: 120px;
+	width: 100%;  
+} 
+.filmPage .listPage .hotList img,
+.filmPage .listPage .comingList img{ 
+	display: block;
+	width: 60px;
+	height: 80px;
+	margin-top: 20px;
+	float: left;   
+}
+.filmPage .listPage .hotList .textIfo,
+.filmPage .listPage .comingList .textIfo{
+	width: 270px;  
+	height: 80px;
+	margin-top: 20px;
+	float: right;
+	color: #DDDDDD;
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(1),
+.filmPage .listPage .comingList .textIfo p:nth-child(1){
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	color: #000000;
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(1) span,
+.filmPage .listPage .comingList .textIfo p:nth-child(1) span{
+	display: block;
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(1) span:nth-child(1),
+.filmPage .listPage .comingList .textIfo p:nth-child(1) span:nth-child(1){
+	float: left; 
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(1) span:nth-child(2){
+	color: #FF4500;   
+	float: right;  
+}
+.filmPage .listPage .comingList .textIfo p:nth-child(1) span:nth-child(2){
+	color: #666;   
+	float: right; 
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(1) span:nth-child(2) em{
+	color: #666;
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(2),
+.filmPage .listPage .comingList .textIfo p:nth-child(2){
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(3),
+.filmPage .listPage .comingList .textIfo p:nth-child(3){
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(3) span{
+	color: #007AFF;
+}
+.filmPage .listPage .comingList .textIfo p:nth-child(3) span{
+	color: #FF4500; 
+}
+.filmPage .listPage .hotList .textIfo p:nth-child(3) span:nth-child(2){
+	margin-left: 40px; 
 }

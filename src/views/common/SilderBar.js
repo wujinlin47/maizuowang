@@ -9,7 +9,7 @@ export default class SliderBar extends Component{
 	
 	render () {
 		//侧边栏滑进滑出控制
-		let sliderBarStyle = {
+		let sliderBarStyle = {  
 			transform: this.props.show ? 'none' : 'translateX(-100%)'  
 		}
 		//遮罩层显示与隐藏
@@ -46,8 +46,14 @@ export default class SliderBar extends Component{
 		this.props.coverHideHandle();                                
 	}      
 	//点击侧边栏进行页面跳转
-	toPage (pathName,headerTitle) {
-		this.props.history.push(pathName);
+	//用history传参传的一个对象就是location中的pathname和state,所以跳转页面用location去接收数据
+	toPage (pathName,headerTitle) { 
+		this.props.history.push({
+			pathname:pathName, 
+			state:{
+				selectAction:0
+			}
+		});
 		this.props.coverHideHandle(headerTitle);       
 	} 
 	

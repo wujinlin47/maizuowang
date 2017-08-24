@@ -12,13 +12,15 @@ let homeScroll = null;
 let homeSwiper = null; 
 
 export default class Home extends Component{    
-	 constructor () {  
+	 constructor ({history}) {   
 	 	super();
+//	 	console.log(history);   
 //	 	console.log(history);      
 	 	this.state ={     
 	 		bannerData:[],         
 	 		hotMovies:[],
-	 		comingMovies:[]
+	 		comingMovies:[],
+	 		history
 	 	}
 	 }
 
@@ -62,7 +64,7 @@ export default class Home extends Component{
 						}
 					</div>
 					
-					<div class="hotMore">
+					<div class="hotMore" onClick={this.handleToHotPage.bind(this)}>  
 						更多热映电影 
 					</div>
 					
@@ -92,7 +94,7 @@ export default class Home extends Component{
 						}
 					</div>
 					
-					<div class="comingMore">                    
+					<div class="comingMore" onClick={this.handleToComingPage.bind(this)}>                       
 						更多即将上映电影          
 					</div>
 					
@@ -104,11 +106,7 @@ export default class Home extends Component{
 	
 	 
 	//在将要挂载之前请求数据
-	componentWillMount () {
-		
-	}
-	
-	componentDidMount () {
+	componentWillMount () {       
 		//首页轮播图
 		homeService.getHomeBanner() 
 		.then( (data) => {
@@ -147,6 +145,10 @@ export default class Home extends Component{
 //			console.log(data)      
 			this.setState({comingMovies:data})  
 		})
+	}
+	
+	componentDidMount () {
+		
 		//挂载之后创建IScroll实例 
 		homeScroll = new IScroll(this.refs.homePage,{              
 			probetype:3
@@ -166,8 +168,27 @@ export default class Home extends Component{
 	//通过点击事件跳转首页详情页
 	//通过点击事件改变头部标题 
 	tohomeDetailPage (id,name) {
-		this.props.history.push('/home-detail',id) 
+		this.state.history.push('/home-detail',id)  
 		this.props.changeTitle(name)     
 	}
 	
+	//通过点击跳转到热映页面，并且传递参数给Film路由页面控制热映组件的显示
+	handleToHotPage () {
+		this.state.history.push({
+			pathname:'/film',
+			state:{
+				selectAction:0    
+			}
+		})
+	}
+	
+	//通过点击跳转到即将上映页面，并且传递参数给Film路由页面控制即将上映组件的显示  
+	handleToComingPage () {
+	 	this.state.history.push({
+			pathname:'/film',
+			state:{
+				selectAction:1
+			}
+		})
+	}
 }
