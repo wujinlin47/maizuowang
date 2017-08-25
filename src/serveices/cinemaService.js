@@ -6,9 +6,11 @@ import axios from 'axios'
 
 function getCinemaAddress () {
 	return new Promise ( (resolve,reject) => {
-		axios.get(`${API.cinemaAddress}`)
+		axios.get(`${API.cinemaAddress}`) 
 		.then( (response) => {
 //			console.log(response)
+			//定义一个最终传出去的值，要定义在if外面，不然取在if外面取不到改值
+			let arr = []
 			if ( response.data.data.cinemas ) {
 				
 				//处理返回回来的数据
@@ -23,7 +25,7 @@ function getCinemaAddress () {
 					
 					return cinemaObj                            
 				})
-				console.log(cinemaArr) 
+//				console.log(cinemaArr)       
 				
 				//定义一个空对像
 				var areaObj = {} 
@@ -39,8 +41,19 @@ function getCinemaAddress () {
 					
 				})
 				
-				console.log(areaObj)   
-			}  	                   
+				for (let area in areaObj) {
+					//定义一个空对象将areaObj转化为数组形式，obj要定义在循环之内           
+					let obj = {}
+					obj.area = area;
+					obj.value = areaObj[area]; 
+					
+					arr.push(obj)
+				}
+//				console.log(arr)
+//				console.log(areaObj) 
+			}  
+			
+			resolve(arr) 
 		})
 		.catch( (error) => {       
 			console.log(error)          

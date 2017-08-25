@@ -1,0 +1,39 @@
+.cinemaPage .area{ 
+	padding: 0 20px;
+	box-sizing: border-box; 
+	width: 100%;
+}
+.cinemaPage .area .areaList{ 
+	height: 30px;
+	width: 100%;
+	font-size: 16px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+	background: #ccc; 
+} 
+.cinemaPage .area .addressList{              
+	background: #fff;
+	width: 100%;
+	display: none;  
+}
+.cinemaPage .area .addressList.showActive{
+	display: block;
+}
+.cinemaPage .area .addressList.hideActive{
+	display: none;   
+} 
+.cinemaPage .area .addressList .address{        
+	width: 100%;
+}
+.cinemaPage .area .addressList .address p{ 
+	width: 260px;
+	height: 30px;
+	line-height: 30px; 
+	font-size: 12px; 
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: normal;	
+}

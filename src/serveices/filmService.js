@@ -1,19 +1,19 @@
 //引入api暴露出来的数据请求路径
-import API from '../api'          
+import API from '../api'           
 
 //引入axios请求
-import axios from 'axios' 
+import axios from 'axios'   
 
-//影片页面热映第一页数据请求
-function getHotMoviesData () { 
-	return new Promise ( (resolve,reject) => {
-		axios.get(`${API.filmHotMovies}`)   
+//影片页面热映数据请求
+function getHotMoviesData (count) {                          
+	return new Promise ( (resolve,reject) => {                 
+		axios.get(`${API.filmHotMovies}${count}`)    
 		.then( (response) => {
 //			console.log(response)
 			//判断是否请求成功
 			if (response.status === 200) {
 				var hotArr = response.data.data.films.map( (item,index) => {
-					var hotObj = {}
+					var hotObj = {} 
 					hotObj.img = item.cover.origin;//图片地址
 					hotObj.grade = item.grade;//评分
 					hotObj.intro = item.intro;//简介

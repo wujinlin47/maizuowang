@@ -3,7 +3,8 @@
 html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,article, aside, footer, header, hgroup, main, nav, section, a{
 	margin:0;padding:0;
 }
-html{font-size: 100px;}              
+html{font-size: 100px;}  
+ul,li{list-style: none;}             
 fieldset, img{border:none;}     
 b,h1,h2,h3,h4,h5,h6{font-weight:100;}           
 i,em{font-style: normal;}  

@@ -15,10 +15,10 @@ const homeDetialData2 = '?__t='
 
 
 //影片页面正在热映url
-const filmHotMovies = '/v4/api/film/now-playing?page=1&count=7'
+const filmHotMovies = '/v4/api/film/now-playing?count=7&page='
 
 //影片页面即将上映
-const filmComingMovies = '/v4/api/film/coming-soon?page=1&count=7'
+const filmComingMovies = '/v4/api/film/coming-soon?count=7&page=1' 
 
 //影院地址请求url
 const cinemaAddress = '/v4/api/cinema?__t='    

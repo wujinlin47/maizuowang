@@ -9,7 +9,7 @@ export default class HomeDetial extends Component{
 		//console.log(location)//可以取到Home页面history传过来的参数location.state  
 		//console.log(match) 
 		super();
-		this.state = {
+		this.state = { 
 			location,
 			DetailIfo:{} 
 		}
