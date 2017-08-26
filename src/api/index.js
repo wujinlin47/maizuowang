@@ -21,7 +21,10 @@ const filmHotMovies = '/v4/api/film/now-playing?count=7&page='
 const filmComingMovies = '/v4/api/film/coming-soon?count=7&page=1' 
 
 //影院地址请求url
-const cinemaAddress = '/v4/api/cinema?__t='    
+const cinemaAddress = '/v4/api/cinema?__t=' 
+
+//城市页面请求url
+const cityData = '/v4/api/city?__t=1503714896632'
 
 //将数据请求url暴露给services
 export default {      
@@ -34,5 +37,6 @@ export default {
 	homeDetialData2,
 	filmHotMovies,
 	filmComingMovies,
-	cinemaAddress   
+	cinemaAddress,  
+	cityData        
 }

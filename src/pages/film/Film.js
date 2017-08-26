@@ -35,7 +35,7 @@ export default class Film extends Component{
 	
 	render () {
 		{/*通过变量控制组件的显示*/}
-		 let element = this.state.selectAction === 0 ? <FilmHotMovies history={this.state.history} hotMoviesArr={this.state.hotMoviesArr}/> : <FilmComingMovies history={this.state.history}/>     
+		let element = this.state.selectAction === 0 ? <FilmHotMovies history={this.state.history} hotMoviesArr={this.state.hotMoviesArr}/> : <FilmComingMovies history={this.state.history}/>     
 		return ( 
 			<div ref="filmPage" class="page main filmPage">    
 				<div class="wrap">
@@ -43,14 +43,14 @@ export default class Film extends Component{
 				 		{
 				 			FilmIfo.filmIfo.map( (item,index) => {  
 				 				return ( 
-				 					<span key={index} onClick={this.ShowAction.bind(this,index)}
-				 					  class={this.state.selectAction === index ? 'active' : ''}>                            
+				 					<span key={index} onClick={this.ShowAction.bind(this,index)}      
+				 					  class={this.state.selectAction === index ? 'active' : ''}>                             
 				 						{item.tabName}          
 				 					</span>               
 				 				)
 				 			})
 				 		}
-				 	</div>
+				 	</div> 
 				 	{element}  
 			 	</div> 
 			</div>
@@ -58,7 +58,7 @@ export default class Film extends Component{
 	}
 	
 	//数据请求的函数  
-	scroll (val) {  
+	loading (val) {  
 		//刚进页面是初始加载数据
 		filmSercive.getHotMoviesData(val)   
 		.then( (data) => {
@@ -75,7 +75,7 @@ export default class Film extends Component{
 		this.setState({selectAction:this.state.history.location.state.selectAction})
 //		console.log(this.state.selectAction)//0 
 		//页面挂载时加载的数据 ，调用数据请求的函数，请求第一页数据 
-		this.scroll(1) 
+		this.loading(1) 
 	}
 	
 	
@@ -85,7 +85,7 @@ export default class Film extends Component{
 			probetype:3
 		})        
 		 
-		//监听滚动时时更新数据
+		//监听滚动时时更新数据     
 		filmScroll.on('scrollEnd', () => {
 //			console.log(filmScroll);//滚动实例
 //			console.log(filmScroll.y);//当前滚动的距离
@@ -112,7 +112,7 @@ export default class Film extends Component{
 //					this.setState({hotMoviesArr:data})
 //		//			console.log(data)
 					//每次符合条件调用数据请求函数，从第二条开始
-					this.scroll(this.state.count); 
+					this.loading(this.state.count);              
 //				})
 				  
 		 	}

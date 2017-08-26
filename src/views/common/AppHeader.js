@@ -1,13 +1,12 @@
 import React, {Component} from 'react'  
  
 
-export default class AppHeader extends Component{ 
-	
+export default class AppHeader extends Component{
 	
 	render () {
 		return (  
 				
-			<div class="header-bar one-border-bottom" onClick={this.headerBarControlHide.bind(this)}>                      
+			<div class="header-bar one-border-bottom" >                      
 				<div class="top-left">      
 					<span class="iconfont icon-menu" onClick={this.sliderBarShow.bind(this)}></span>     
 					
@@ -15,7 +14,7 @@ export default class AppHeader extends Component{
 				</div>
 				<div class="top-right"> 
 					<p>
-						<span>深圳</span>
+						<span onClick={this.toCityPage.bind(this)}>深圳</span>
 						<span class="iconfont icon-arrow-down"></span>  
 					</p>
 					<em class="iconfont icon-person"></em>         
@@ -30,9 +29,9 @@ export default class AppHeader extends Component{
 		this.props.menuHandle();                   
 	}
 	
-	headerBarControlHide () {
-		//调用App.js中AppHeader组件中的menuHandle方法                 
-		this.props.menuHandle(); 
+	toCityPage () {
+		//点击跳转到城市页面                                        
+		this.props.history.push('/city') 
 	}
 	
 }

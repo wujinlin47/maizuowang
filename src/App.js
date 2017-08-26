@@ -6,7 +6,8 @@ import AppHeader from './views/common/AppHeader.js'
 //引入侧边栏组件
 import SilderBar from './views/common/SilderBar.js'
 
-       
+//引入城市页面
+import City from './pages/city/city.js'      
 //引入首页 
 import Home from './pages/home/Home.js'
 //引入首页详情页
@@ -38,9 +39,12 @@ export default class App extends Component{
 	render () {
 		 return (
 		 	<BrowserRouter>  
-		 		<div>           
-		 			<AppHeader menuHandle={this.menuHandle.bind(this)}
-		 					   title={this.state.headerTitle}/> 
+		 		<div>          
+		 			<Route path='/' render={({history}) => {
+		 				return <AppHeader menuHandle={this.menuHandle.bind(this)}
+		 					              title={this.state.headerTitle}
+		 					              history={history}/>
+		 			}}/>
 		 			
 		 			<Route path='/' render={({history,location,match})=>{
 		 				//console.log(location); 
@@ -60,7 +64,8 @@ export default class App extends Component{
 		 			<Route path='/cinema' component={Cinema} />    
 		 			<Route path='/shop' component={Store} />      
 		 			<Route path='/my' component={My} />    
-		 			<Route path='/card' component={Card} />                   
+		 			<Route path='/card' component={Card} />
+		 			<Route path='/city' component={City} />            
 		 		</div>   
 		 	</BrowserRouter>                     	
 		 )       
@@ -72,7 +77,7 @@ export default class App extends Component{
 		this.setState({show:!this.state.show})       
 		//判断headerTitle是否为空，如果为空则给其初始化一个值    
 		if (headerTitle) {
-			this.setState({headerTitle})
+			this.setState({headerTitle}) 
 		} 
 		  
 	} 

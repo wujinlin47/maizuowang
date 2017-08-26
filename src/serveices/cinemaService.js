@@ -37,7 +37,8 @@ function getCinemaAddress () {
 					}
 					
 					
-					areaObj[name].push(item)
+					areaObj[name].push(item) 
+				
 					
 				})
 				
